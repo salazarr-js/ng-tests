@@ -1,0 +1,17 @@
+
+<form novalidate (ngSubmit)="buy()" [formGroup]="stripeForm">
+  <mat-form-field class="mb-1 d-block">
+    <mat-label>Nombre</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Jane Doe"
+      formControlName="name" 
+    >
+  </mat-form-field>
+
+  <div id="card-container" class="field mb-1"></div>
+
+  <button mat-raised-button color="accent" type="submit">BUY</button>
+</form>
+

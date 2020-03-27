@@ -1,8 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './routing.module';
+// THIRDs
+import { NgxStripeModule } from 'ngx-stripe';
+
+// APP
+import { RoutingModule } from './routing.module';
 import { AppComponent } from './app.component';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +17,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+
+    NgxStripeModule.forRoot('pk_test_NBUWxJozylDIfjJtNPFhEtpR00bS01WTBE')
   ],
   providers: [],
   bootstrap: [AppComponent]

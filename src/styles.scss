@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  box-sizing: content-box;
+}
+html, body { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  height           : 100vh;
+  display          : flex;
+  align-items      : center;
+  justify-content  : center;
+  flex-direction   : column;
+  background-color : #FAFAFA;
+  form {
+    width            : 520px;
+    padding          : 16px;
+    box-shadow       : 3px 3px 6px rgba(black, 0.12);
+    border-radius    : 4px;
+    background-color : white;
+  }
+}
+
+.mb-1 {
+  margin-bottom: 16px !important;
+}
+.mr-1 {
+  margin-right: 16px !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-1 {
+  flex: 1 !important;
+}

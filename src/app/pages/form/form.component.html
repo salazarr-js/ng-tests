@@ -1,0 +1,100 @@
+
+<form novalidate (ngSubmit)="pay()" [formGroup]="stripeForm">
+  <!-- CARD NAME -->
+  <mat-form-field class="d-block mb-1" appearance="standard" floatLabel="always">
+    <mat-label>Nombre</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="Jane Doe"
+      formControlName="cardName" 
+    >
+    <mat-error *ngIf="cardName.invalid">{{ cardName.errors | json }}</mat-error>
+  </mat-form-field>
+  <!-- CARD NAME -->
+
+  <!-- CARD NUMBER -->
+  <mat-form-field class="d-block mb-1" appearance="standard" floatLabel="always">
+    <mat-label>Numero Tarjeta</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="1234 1234 1234 1234"
+      pattern="\d{16}"
+      formControlName="cardNumber" 
+    >
+    <mat-error *ngIf="cardNumber.invalid">{{ cardNumber.errors | json }}</mat-error>
+  </mat-form-field>
+  <!-- CARD NUMBER -->
+
+
+  <div class="d-flex mb-1">
+    <!-- EXPIRATION MONTH -->
+    <mat-form-field class="flex-1 mr-1" appearance="standard" floatLabel="always">
+      <mat-label>Expiration Month</mat-label>
+
+      <mat-select formControlName="expMonth" placeholder="MM">
+        <mat-option value="1">Enero</mat-option>
+        <mat-option value="2">Febrero</mat-option>
+        <mat-option value="3">Marzo</mat-option>
+        <mat-option value="4">Abril</mat-option>
+        <mat-option value="5">Mayo</mat-option>
+        <mat-option value="6">Junio</mat-option>
+        <mat-option value="7">Julio</mat-option>
+        <mat-option value="8">Agosto</mat-option>
+        <mat-option value="9">Septiembre</mat-option>
+        <mat-option value="10">Octubre</mat-option>
+        <mat-option value="11">Noviembre</mat-option>
+        <mat-option value="12">Diciembre</mat-option>
+      </mat-select>
+      <mat-error *ngIf="expMonth.invalid">{{ expMonth.errors | json }}</mat-error>
+    </mat-form-field>
+    <!-- EXPIRATION MONTH -->
+
+    <!-- EXPIRATION YEAR -->
+    <mat-form-field class="flex-1" appearance="standard" floatLabel="always">
+      <mat-label>Expiration Year</mat-label>
+      <input
+        matInput
+        type="number"
+        pattern="\d{2}"
+        min="20"
+        placeholder="YY"
+        formControlName="expYear" 
+      >
+      <mat-error *ngIf="expYear.invalid">{{ expYear.errors | json }}</mat-error>
+    </mat-form-field>
+    <!-- EXPIRATION YEAR -->
+  </div>
+
+  <!-- CVC NUMBER -->
+  <mat-form-field class="d-block mb-1" appearance="standard" floatLabel="always">
+    <mat-label>Numero Tarjeta</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="CVC"
+      pattern="\d{3}"
+      formControlName="cvcNumber" 
+    >
+    <mat-error *ngIf="cvcNumber.invalid">{{ cvcNumber.errors | json }}</mat-error>
+  </mat-form-field>
+  <!-- CVC NUMBER -->
+
+  <!-- ZIP CODE -->
+  <mat-form-field class="d-block mb-1" appearance="standard" floatLabel="always">
+    <mat-label>ZIP Code</mat-label>
+    <input
+      matInput
+      type="text"
+      placeholder="1234"
+      formControlName="zipCode" 
+    >
+    <mat-error *ngIf="zipCode.invalid">{{ zipCode.errors | json }}</mat-error>
+  </mat-form-field>
+  <!-- ZIP CODE -->
+
+  
+  <button mat-raised-button color="accent" type="submit" [disabled]="stripeForm.invalid">PAY</button>
+</form>
+
